@@ -12,6 +12,7 @@ os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
 
 st.title('GPT-3.5 LangChain Dataframe Agent')
 st.text('natural language chat interface with dataframe grounding for question answering')
+st.caption('made by kai')
 
 url = "https://raw.github.com/mattdelhey/kaggle-titanic/master/Data/train.csv"
 if 'df' not in st.session_state:
