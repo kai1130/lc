@@ -36,11 +36,14 @@ with st.form('chat_area'):
 
     if submitted:
 
-        agent = create_pandas_dataframe_agent(
-            ChatOpenAI(temperature=0, model="gpt-3.5-turbo-0613"),
-            st.session_state['df'],
-            verbose=True,
-            agent_type=AgentType.OPENAI_FUNCTIONS,
-        )
-        response = agent.run(text)
+        with st.spinner('Generating Response'):
+    
+            agent = create_pandas_dataframe_agent(
+                ChatOpenAI(temperature=0, model="gpt-3.5-turbo-0613"),
+                st.session_state['df'],
+                verbose=True,
+                agent_type=AgentType.OPENAI_FUNCTIONS,
+            )
+            response = agent.run(text)
+
         st.info(response, icon="🔥")
