@@ -36,6 +36,8 @@ with st.form('chat_area'):
 
     if submitted:
 
+        st.write('hi')
+
         with st.spinner('Generating Response'):
     
             agent = create_pandas_dataframe_agent(
